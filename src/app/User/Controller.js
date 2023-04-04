@@ -37,7 +37,97 @@ exports.getAircon = async function (req, res) {
     return res.send(response(baseResponse.SUCCESS, userAircon));
 };
 
+exports.getFire = async function (req, res) {
+    /**
+     * Path Variable: userId
+     */
+    const userId = req.params.userId;
 
+    if (!userId) return res.send(errResponse(baseResponse.USER_USERID_EMPTY));
+
+    const userFire = await userProvider.retrieveFire(userId);
+    return res.send(response(baseResponse.SUCCESS, userFire));
+};
+
+exports.getDust = async function (req, res) {
+    /**
+     * Path Variable: userId
+     */
+    const userId = req.params.userId;
+
+    if (!userId) return res.send(errResponse(baseResponse.USER_USERID_EMPTY));
+
+    const userDust = await userProvider.retrieveDust(userId);
+    return res.send(response(baseResponse.SUCCESS, userDust));
+};
+
+exports.getHumi = async function (req, res) {
+    /**
+     * Path Variable: userId
+     */
+     console.log("controller");
+    const userId = req.params.userId;
+
+    if (!userId) return res.send(errResponse(baseResponse.USER_USERID_EMPTY));
+
+    const userHumi = await userProvider.retrieveHumi(userId);
+    return res.send(response(baseResponse.SUCCESS, userHumi));
+};
+
+
+exports.getTemp = async function (req, res) {
+    /**
+     * Path Variable: userId
+     */
+     console.log("controller");
+    const userId = req.params.userId;
+
+    if (!userId) return res.send(errResponse(baseResponse.USER_USERID_EMPTY));
+
+    const userTemp = await userProvider.retrieveTemp(userId);
+    return res.send(response(baseResponse.SUCCESS, userTemp));
+};
+
+exports.getLed = async function (req, res) {
+    /**
+     * Path Variable: userId
+     */
+     console.log("controller");
+    const userId = req.params.userId;
+
+    if (!userId) return res.send(errResponse(baseResponse.USER_USERID_EMPTY));
+
+    const userLed = await userProvider.retrieveLed(userId);
+    return res.send(response(baseResponse.SUCCESS, userLed));
+};
+
+
+// exports.getSwitch = async function (req, res) {
+//     /**
+//      * Path Variable: userId
+//      */
+//      console.log("controller");
+//     const userId = req.params.userId;
+
+//     if (!userId) return res.send(errResponse(baseResponse.USER_USERID_EMPTY));
+
+//     const userSwitch = await userProvider.retrieveSwitch(userId);
+//     return res.send(response(baseResponse.SUCCESS, userSwitch));
+// };
+
+
+// exports.getFarm = async function (req, res) {
+//     /**
+//      * Path Variable: userId
+//      */
+//      console.log("controller");
+//     const userId = req.params.userId;
+
+//     if (!userId) return res.send(errResponse(baseResponse.USER_USERID_EMPTY));
+
+//     const userFarm = await userProvider.retrieveFarm(userId);
+//     return res.send(response(baseResponse.SUCCESS, userFarm));
+// };
 
 
 
